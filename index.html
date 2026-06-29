@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitConnect | On-Demand Fitness Trainer Booking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="#top" class="brand" aria-label="FitConnect home">
+        <span class="brand-mark">FC</span>
+        <span>FitConnect</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#trainers">Trainers</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#dashboards">Modules</a>
+        <a href="#admin">Admin</a>
+        <a href="#contact" class="nav-cta">Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-padding">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow">Service-Based E-commerce Platform</div>
+          <h1>Book verified fitness trainers on demand.</h1>
+          <p class="hero-text">
+            FitConnect helps elderly users, working professionals, and home-training clients find trainers, compare pricing, check availability, book sessions, chat, and pay securely through SSLCommerz-style online payment.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#trainers">Find a Trainer</a>
+            <a class="btn btn-secondary" href="#workflow">View Workflow</a>
+          </div>
+          <div class="hero-stats" aria-label="FitConnect highlights">
+            <div><strong>24/7</strong><span>Online Booking</span></div>
+            <div><strong>10%</strong><span>Commission Model</span></div>
+            <div><strong>৳500+</strong><span>Avg. Session Fee</span></div>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Booking preview card">
+          <div class="hero-card-top">
+            <span class="live-dot"></span>
+            <span>Live Trainer Availability</span>
+          </div>
+          <div class="trainer-preview">
+            <div class="avatar">AR</div>
+            <div>
+              <h3>Arif Rahman</h3>
+              <p>Strength & Mobility Coach</p>
+            </div>
+            <span class="rating">★ 4.9</span>
+          </div>
+          <div class="mini-calendar">
+            <button>09:00 AM</button>
+            <button class="selected">11:30 AM</button>
+            <button>06:00 PM</button>
+          </div>
+          <div class="booking-summary">
+            <span>Home Session</span>
+            <strong>৳700</strong>
+          </div>
+          <button class="btn btn-primary full-width" data-scroll-to="trainers">Book Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding compact" id="features">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Project Objectives</p>
+          <h2>Core features from the proposal</h2>
+          <p>The website is structured around user booking, trainer management, admin verification, payment support, communication, and reviews.</p>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <span>🔎</span>
+            <h3>Advanced Trainer Filtering</h3>
+            <p>Users can search by specialization, rating, price range, and availability before selecting a trainer.</p>
+          </article>
+          <article class="feature-card">
+            <span>📅</span>
+            <h3>Real-Time Booking UI</h3>
+            <p>Trainer schedules and time-slot selection are shown through a clean booking interface.</p>
+          </article>
+          <article class="feature-card">
+            <span>💳</span>
+            <h3>SSLCommerz Payment Flow</h3>
+            <p>A secure payment step is included as a front-end simulation for prototype demonstration.</p>
+          </article>
+          <article class="feature-card">
+            <span>✅</span>
+            <h3>Verified Trainer Trust</h3>
+            <p>Trainer verification badges, ratings, reviews, and transparent prices support user adoption.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding muted" id="trainers">
+      <div class="container">
+        <div class="section-heading left">
+          <p class="eyebrow">User Module</p>
+          <h2>Browse, filter, and book trainers</h2>
+          <p>Select a suitable trainer and complete a demo booking with payment and review features.</p>
+        </div>
+
+        <div class="filter-panel" aria-label="Trainer search filters">
+          <label>
+            Search
+            <input type="search" id="searchInput" placeholder="Search trainer or skill..." />
+          </label>
+          <label>
+            Specialization
+            <select id="specializationFilter">
+              <option value="all">All specializations</option>
+              <option value="Weight Loss">Weight Loss</option>
+              <option value="Strength Training">Strength Training</option>
+              <option value="Yoga">Yoga</option>
+              <option value="Elderly Fitness">Elderly Fitness</option>
+              <option value="Cardio">Cardio</option>
+            </select>
+          </label>
+          <label>
+            Max Price
+            <select id="priceFilter">
+              <option value="9999">Any price</option>
+              <option value="500">Up to ৳500</option>
+              <option value="700">Up to ৳700</option>
+              <option value="1000">Up to ৳1000</option>
+            </select>
+          </label>
+          <label>
+            Minimum Rating
+            <select id="ratingFilter">
+              <option value="0">Any rating</option>
+              <option value="4.5">4.5+</option>
+              <option value="4.7">4.7+</option>
+              <option value="4.9">4.9+</option>
+            </select>
+          </label>
+          <button class="btn btn-primary" id="resetFilters">Reset</button>
+        </div>
+
+        <div class="trainer-grid" id="trainerGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section-padding" id="workflow">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">System Workflow</p>
+          <h2>From registration to review</h2>
+          <p>This follows the proposal workflow: login/register, search trainers, filter and select, book slot, pay, confirm, complete session, and review.</p>
+        </div>
+        <div class="workflow">
+          <div class="workflow-step"><span>1</span><p>Login / Register</p></div>
+          <div class="workflow-step"><span>2</span><p>Search Trainers</p></div>
+          <div class="workflow-step"><span>3</span><p>Filter & Select</p></div>
+          <div class="workflow-step"><span>4</span><p>Book Time Slot</p></div>
+          <div class="workflow-step"><span>5</span><p>Pay via SSLCommerz</p></div>
+          <div class="workflow-step"><span>6</span><p>Trainer Confirms</p></div>
+          <div class="workflow-step"><span>7</span><p>Session & Review</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding muted" id="dashboards">
+      <div class="container">
+        <div class="section-heading left">
+          <p class="eyebrow">System Modules</p>
+          <h2>User, Trainer, and Admin dashboards</h2>
+        </div>
+        <div class="dashboard-grid">
+          <article class="dashboard-card">
+            <h3>User Dashboard</h3>
+            <ul>
+              <li>Registration and authentication</li>
+              <li>Browse and filter trainers</li>
+              <li>Booking and payment history</li>
+              <li>Review and rating system</li>
+            </ul>
+            <button class="btn btn-secondary" id="showBookings">View My Bookings</button>
+          </article>
+          <article class="dashboard-card">
+            <h3>Trainer Dashboard</h3>
+            <ul>
+              <li>Profile creation and management</li>
+              <li>Availability scheduling</li>
+              <li>Booking acceptance or rejection</li>
+              <li>Earnings tracking</li>
+            </ul>
+            <div class="earnings-box">
+              <span>Estimated Earnings</span>
+              <strong id="trainerEarnings">৳0</strong>
+            </div>
+          </article>
+          <article class="dashboard-card">
+            <h3>Communication Module</h3>
+            <ul>
+              <li>Chat support between user and trainer</li>
+              <li>Call request option</li>
+              <li>Session reminders</li>
+              <li>Complaint forwarding to admin</li>
+            </ul>
+            <button class="btn btn-primary" id="openChatDemo">Open Chat Demo</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding" id="admin">
+      <div class="container">
+        <div class="section-heading left">
+          <p class="eyebrow">Admin Module</p>
+          <h2>Verification, transactions, and complaints</h2>
+          <p>Prototype admin panel showing trainer verification and booking transaction monitoring.</p>
+        </div>
+        <div class="admin-layout">
+          <div class="admin-card">
+            <h3>Trainer Verification</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Trainer</th>
+                    <th>Specialization</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminTrainerRows"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="admin-card">
+            <h3>Transaction Monitoring</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Booking</th>
+                    <th>Amount</th>
+                    <th>Payment</th>
+                  </tr>
+                </thead>
+                <tbody id="transactionRows"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding cost-section">
+      <div class="container cost-grid">
+        <div>
+          <p class="eyebrow">Business Model</p>
+          <h2>Low-cost MVP with scalable revenue</h2>
+          <p>FitConnect can start with a low-cost prototype using free/open-source tools and grow through commission-based revenue from completed bookings.</p>
+        </div>
+        <div class="cost-card">
+          <div><span>Estimated MVP Cost</span><strong>৳9,000</strong></div>
+          <div><span>Session Commission</span><strong>10%</strong></div>
+          <div><span>At 1000 bookings/month</span><strong>৳50,000</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding muted" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Get Started</p>
+          <h2>Create your FitConnect account</h2>
+          <p>This form is a front-end prototype. It validates input and shows the registration flow, but it does not submit to a real backend yet.</p>
+        </div>
+        <form class="contact-form" id="registrationForm">
+          <label>
+            Full Name
+            <input type="text" id="fullName" placeholder="Enter your name" required />
+          </label>
+          <label>
+            Email Address
+            <input type="email" id="email" placeholder="example@email.com" required />
+          </label>
+          <label>
+            Account Type
+            <select id="accountType" required>
+              <option value="User">User</option>
+              <option value="Trainer">Trainer</option>
+            </select>
+          </label>
+          <label>
+            Fitness Goal
+            <textarea id="goal" rows="4" placeholder="Example: I need home-based weight loss training..."></textarea>
+          </label>
+          <button class="btn btn-primary full-width" type="submit">Register Demo Account</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#top" class="brand footer-brand"><span class="brand-mark">FC</span><span>FitConnect</span></a>
+        <p>A prototype website for a service-based e-commerce fitness trainer booking platform.</p>
+      </div>
+      <div>
+        <h4>Technologies</h4>
+        <p>HTML, CSS, JavaScript prototype. Ready to extend with React.js, Node.js, Express.js, MongoDB, and SSLCommerz API.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="bookingModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal" aria-label="Close booking modal">×</button>
+      <h2 id="modalTitle">Book Trainer</h2>
+      <p id="modalSubtitle" class="modal-subtitle"></p>
+      <form id="bookingForm" class="booking-form">
+        <label>
+          Session Date
+          <input type="date" id="bookingDate" required />
+        </label>
+        <label>
+          Available Time Slot
+          <select id="bookingTime" required></select>
+        </label>
+        <label>
+          Session Type
+          <select id="sessionType" required>
+            <option value="Home Training">Home Training</option>
+            <option value="Online Training">Online Training</option>
+            <option value="Gym Training">Gym Training</option>
+          </select>
+        </label>
+        <label>
+          User Address / Meeting Link Note
+          <textarea id="bookingNote" rows="3" placeholder="Write address or meeting preference..."></textarea>
+        </label>
+        <div class="payment-box">
+          <span>Demo payment gateway</span>
+          <strong>SSLCommerz Sandbox</strong>
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Pay & Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="bookingsModal" aria-hidden="true" role="dialog" aria-labelledby="bookingsTitle">
+    <div class="modal-content large-modal">
+      <button class="modal-close" id="closeBookingsModal" aria-label="Close bookings modal">×</button>
+      <h2 id="bookingsTitle">My Demo Bookings</h2>
+      <div id="bookingsList" class="bookings-list"></div>
+    </div>
+  </div>
+
+  <div class="chat-widget" id="chatWidget" aria-live="polite">
+    <div class="chat-header">
+      <span>FitConnect Chat</span>
+      <button id="closeChat" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <p class="bot-msg">Hello! A trainer will respond soon. How can we help?</p>
+    </div>
+    <form id="chatForm" class="chat-form">
+      <input type="text" id="chatInput" placeholder="Write a message..." />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
